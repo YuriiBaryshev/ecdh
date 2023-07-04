@@ -4,19 +4,15 @@ import 'dart:math';
 class ECDHActor {
   late BigInt _secret;
 
-  ECDHActor() {
-    generateSecret();
-  }
-
   ///Generate secret of the party
-  void generateSecret({int bitLength = 256}) {
-    if(bitLength & 7 != 0) {
-      throw ArgumentError("Secret value's length should be multiple by 8");
-    }
+  void generateSecret(BigInt maxValue) {
+    int length = maxValue.bitLength >> 3;
     Random generator = Random.secure();
     _secret = BigInt.zero;
-    for(int i = 0; i < (bitLength >> 3); i++) {
+    for(int i = 0; i < length; i++) {
       _secret = (_secret << 8) + BigInt.from(generator.nextInt(256));
     }
   }
+
+
 }
