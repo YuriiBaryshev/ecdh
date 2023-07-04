@@ -4,8 +4,12 @@ import 'dart:math';
 class ECDHActor {
   late BigInt _secret;
 
+  ECDHActor() {
+    generateSecret();
+  }
+
   ///Generate secret of the party
-  void _generateSecret({int bitLength = 256}) {
+  void generateSecret({int bitLength = 256}) {
     if(bitLength & 7 != 0) {
       throw ArgumentError("Secret value's length should multiple 8");
     }
