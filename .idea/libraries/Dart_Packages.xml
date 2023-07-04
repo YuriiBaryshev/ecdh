@@ -65,6 +65,20 @@
             </list>
           </value>
         </entry>
+        <entry key="elliptic">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/elliptic-0.3.8/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="elliptic_curves_facade">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/git/elliptic_curves_facade-90e9accfc1abf6a879e52f86d67a8d40d143d769//lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="file">
           <value>
             <list>
@@ -327,6 +341,7 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/.pub-cache/git/elliptic_curves_facade-90e9accfc1abf6a879e52f86d67a8d40d143d769//lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-61.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/analyzer-5.13.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.2/lib" />
@@ -336,6 +351,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/coverage-1.6.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/elliptic-0.3.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/file-6.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/glob-2.1.2/lib" />
