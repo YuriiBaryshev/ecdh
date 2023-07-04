@@ -30,4 +30,14 @@ class ECDH {
   ECPoint bobCreatesPointForExchange() {
     return bob.yieldPoint(ECPoint(_ec.G.X, _ec.G.Y));
   }
+
+  ///Compute mutual secret for Alice
+  ECPoint aliceComputesMutualSecret(ECPoint pointFromBob) {
+    return alice.yieldPoint(pointFromBob);
+  }
+
+  ///Compute mutual secret for Bob
+  ECPoint bobComputesMutualSecret(ECPoint pointFromAlice) {
+    return bob.yieldPoint(pointFromAlice);
+  }
 }
