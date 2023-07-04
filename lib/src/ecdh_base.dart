@@ -14,4 +14,20 @@ class ECDH {
     alice = ECDHActor(ec);
     bob = ECDHActor(ec);
   }
+
+  ///Generate secret values
+  void generateSecrets() {
+    alice.generateSecret();
+    bob.generateSecret();
+  }
+  
+  ///Create Alice's G*_secret point
+  ECPoint aliceCreatesPointForExchange() {
+    return alice.yieldPoint(ECPoint(_ec.G.X, _ec.G.Y));
+  }
+
+  ///Create Bob's G*_secret point
+  ECPoint bobCreatesPointForExchange() {
+    return bob.yieldPoint(ECPoint(_ec.G.X, _ec.G.Y));
+  }
 }
