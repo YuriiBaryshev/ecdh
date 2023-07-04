@@ -1,6 +1,14 @@
-// TODO: Put public facing types in this file.
+import 'package:elliptic/elliptic.dart';
+
+import './ecdh_actor.dart';
 
 /// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+class ECDH {
+  late ECDHActor alice, bob;
+
+  ///Simulate elliptic curve Diffie-Hellman protocol for two parties
+  ECDH([EllipticCurve? ec]) {
+    alice = ECDHActor(ec);
+    bob = ECDHActor(ec);
+  }
 }

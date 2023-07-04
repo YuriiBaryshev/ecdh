@@ -24,5 +24,8 @@ class ECDHActor {
     }
   }
 
-
+  ///Create secret-based elliptic curves point
+  ECPoint yieldPoint(ECPoint point) {
+    return _facade.mulScalar(point, _secret);
+  }
 }
