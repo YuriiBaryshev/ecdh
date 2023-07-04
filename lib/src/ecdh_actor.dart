@@ -11,7 +11,7 @@ class ECDHActor {
   ///Generate secret of the party
   void generateSecret({int bitLength = 256}) {
     if(bitLength & 7 != 0) {
-      throw ArgumentError("Secret value's length should multiple 8");
+      throw ArgumentError("Secret value's length should be multiple by 8");
     }
     Random generator = Random.secure();
     _secret = BigInt.zero;
