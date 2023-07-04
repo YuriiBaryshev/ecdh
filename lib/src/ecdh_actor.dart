@@ -11,12 +11,12 @@ class ECDHActor {
   ECDHActor([EllipticCurve? ec]) {
     ec ??= getSecp256k1() as EllipticCurve;
     _facade = EllipticCurveFacade(ec);
-    generateSecret(ec.n);
+    generateSecret();
   }
 
   ///Generate secret of the party
-  void generateSecret(BigInt maxValue) {
-    int length = maxValue.bitLength >> 3;
+  void generateSecret() {
+    int length = _facade.curve.n.bitLength >> 3;
     Random generator = Random.secure();
     _secret = BigInt.zero;
     for(int i = 0; i < length; i++) {

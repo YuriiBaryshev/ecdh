@@ -2,15 +2,11 @@ import 'package:ecdh/ecdh.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    final awesome = Awesome();
+  group('ECDH tests', () {
+    final ecdh = ECDH();
 
-    setUp(() {
-      // Additional setup goes here.
-    });
-
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+    test('secp256k1 is default elliptic curve', () {
+      expect(ecdh, isTrue);
     });
   });
 }
