@@ -11,5 +11,11 @@ void main() {
       expect(ecdh.alice.intermediatePoint, ECPoint(getSecp256k1().G.X, getSecp256k1().G.Y));
       expect(ecdh.bob.intermediatePoint, ECPoint(getSecp256k1().G.X, getSecp256k1().G.Y));
     });
+
+
+    test('creating mutual secret correctness test', () {
+      ecdh.executeDH();
+      expect(ecdh.alice.getMutualSecret(), ecdh.bob.getMutualSecret());
+    });
   });
 }
