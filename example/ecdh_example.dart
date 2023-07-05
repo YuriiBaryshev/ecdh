@@ -1,4 +1,4 @@
-import 'package:ecdh/src/ecdh_actor.dart';
+import 'package:ecdh/ecdh.dart';
 import 'package:elliptic_curves_facade/elliptic_curves_facade.dart';
 import 'package:elliptic/elliptic.dart';
 
