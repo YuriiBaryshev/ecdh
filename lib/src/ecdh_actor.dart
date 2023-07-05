@@ -6,12 +6,14 @@ import 'package:elliptic/elliptic.dart';
 class ECDHActor {
   late BigInt _secret;
   late EllipticCurveFacade _facade;
+  late ECPoint intermediatePoint;
 
 
   ECDHActor([EllipticCurve? ec]) {
     ec ??= getSecp256k1() as EllipticCurve;
     _facade = EllipticCurveFacade(ec);
     generateSecret();
+    intermediatePoint = ECPoint(ec.G.X, ec.G.Y);
   }
 
   ///Generate secret of the party
@@ -25,7 +27,9 @@ class ECDHActor {
   }
 
   ///Create secret-based elliptic curves point
-  ECPoint yieldPoint(ECPoint point) {
+  ECPoint yieldPoint([ECPoint? point]) {
+    point ??= intermediatePoint;
+    intermediatePoint = _facade.mulScalar(point, _secret);
     return _facade.mulScalar(point, _secret);
   }
 }

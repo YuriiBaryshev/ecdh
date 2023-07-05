@@ -6,11 +6,9 @@ import './ecdh_actor.dart';
 /// Checks if you are awesome. Spoiler: you are.
 class ECDH {
   late ECDHActor alice, bob;
-  late EllipticCurve _ec;
 
   ///Simulate elliptic curve Diffie-Hellman protocol for two parties
   ECDH([EllipticCurve? ec]) {
-    _ec = ec ?? getSecp256k1() as EllipticCurve;
     alice = ECDHActor(ec);
     bob = ECDHActor(ec);
   }
@@ -23,12 +21,12 @@ class ECDH {
   
   ///Create Alice's G*_secret point
   ECPoint aliceCreatesPointForExchange() {
-    return alice.yieldPoint(ECPoint(_ec.G.X, _ec.G.Y));
+    return alice.yieldPoint();
   }
 
   ///Create Bob's G*_secret point
   ECPoint bobCreatesPointForExchange() {
-    return bob.yieldPoint(ECPoint(_ec.G.X, _ec.G.Y));
+    return bob.yieldPoint();
   }
 
   ///Compute mutual secret for Alice
