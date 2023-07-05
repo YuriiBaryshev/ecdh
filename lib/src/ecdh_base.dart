@@ -39,6 +39,7 @@ class ECDH {
     return bob.yieldPoint(pointFromAlice);
   }
 
+  ///Integration method to call them all to one's will ;)
   void executeDH() {
     generateSecrets();
     ECPoint fromAlice = aliceCreatesPointForExchange();
