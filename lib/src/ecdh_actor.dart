@@ -32,4 +32,9 @@ class ECDHActor {
     intermediatePoint = _facade.mulScalar(point, _secret);
     return _facade.mulScalar(point, _secret);
   }
+
+  ///Returns yielded result
+  BigInt getMutualSecret() {
+    return intermediatePoint.x;
+  }
 }
