@@ -38,4 +38,15 @@ class ECDH {
   ECPoint bobComputesMutualSecret(ECPoint pointFromAlice) {
     return bob.yieldPoint(pointFromAlice);
   }
+
+  void executeDH() {
+    generateSecrets();
+    ECPoint fromAlice = aliceCreatesPointForExchange();
+    ECPoint fromBob = bobCreatesPointForExchange();
+    ECPoint resultOfAlice = aliceComputesMutualSecret(fromBob);
+    ECPoint resultOfBob = bobComputesMutualSecret(fromAlice);
+    if(resultOfAlice != resultOfBob) {
+      throw Exception("Something went wrong and ECDH finished unexpectedly");
+    }
+  }
 }
